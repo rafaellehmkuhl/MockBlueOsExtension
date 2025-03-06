@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock BlueOS Extension</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mock BlueOS Extension</h1>
+            <p>A sample BlueOS extension demonstrating basic functionality</p>
+        </header>
+
+        <main>
+            <section class="status-panel">
+                <h2>Extension Status</h2>
+                <div class="status-indicator">
+                    <span class="status-light" id="status-light"></span>
+                    <span id="status-text">Checking status...</span>
+                </div>
+            </section>
+
+            <section class="control-panel">
+                <h2>Control Panel</h2>
+                <div class="controls">
+                    <button id="action-button" class="button primary">Perform Action</button>
+                    <button id="refresh-button" class="button secondary">Refresh Status</button>
+                </div>
+            </section>
+
+            <section class="data-panel">
+                <h2>Data Panel</h2>
+                <div class="data-display">
+                    <div class="data-row">
+                        <label>Message:</label>
+                        <input type="text" id="message-input" placeholder="Enter a message">
+                        <button id="send-message" class="button primary">Send</button>
+                    </div>
+                    <div class="data-log">
+                        <h3>Message Log</h3>
+                        <div id="message-log" class="log-container"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Mock BlueOS Extension &copy; 2023</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

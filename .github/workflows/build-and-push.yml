@@ -1,0 +1,37 @@
+name: Build and Deploy BlueOS Extension
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**.md'
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetches all history for tags and branches
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build and push using BlueOS Extension GitHub Action
+        uses: BlueOS-community/Deploy-BlueOS-Extension@main
+        with:
+          docker-username: ${{ secrets.DOCKER_USERNAME }}
+          docker-password: ${{ secrets.DOCKER_PASSWORD }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          image-name: mock-blueos-extension
+          author: "Rafael Lehmkuhl"
+          author-email: "rafael.lehmkuhl93@gmail.com"
+          maintainer: "rafaellehmkuhl"
+          maintainer-email: "rafael.lehmkuhl93@gmail.com"
+          build-platforms: "linux/amd64,linux/arm/v7"
