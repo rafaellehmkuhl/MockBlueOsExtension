@@ -143,6 +143,40 @@ async def cockpit_extras():
                     "body": ""
                 }
             }
+        ],
+        "joystick_suggestions": [
+            {
+                "id": "mock-extension-joystick-focus-decrease",
+                "actionId": "camera-focus-decrease",
+                "actionName": "Camera Focus Decrease",
+                "modifier": "regular",
+                "button": 6,
+                "description": "Decrease the focus of the camera",
+            },
+            {
+                "id": "mock-extension-joystick-focus-increase",
+                "actionId": "camera-focus-increase",
+                "actionName": "Camera Focus Increase",
+                "modifier": "regular",
+                "button": 7,
+                "description": "Increase the focus of the camera",
+            },
+            {
+                "id": "mock-extension-joystick-zoom-decrease",
+                "actionId": "camera-zoom-decrease",
+                "actionName": "Camera Zoom Decrease",
+                "modifier": "shift",
+                "button": 6,
+                "description": "Decrease the zoom of the camera",
+            },
+            {
+                "id": "mock-extension-joystick-zoom-increase",
+                "actionId": "camera-zoom-increase",
+                "actionName": "Camera Zoom Increase",
+                "modifier": "shift",
+                "button": 7,
+                "description": "Increase the zoom of the camera",
+            },
         ]
     }
 
